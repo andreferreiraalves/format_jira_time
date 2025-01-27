@@ -1,11 +1,12 @@
-use core::panic;
 use std::env;
+use std::process;
 
 fn main() {
     let args: Vec<_> = env::args().collect();
 
     if args.len() <= 0 {
-        panic!("nenhum argumento informado");
+        println!("nenhum argumento informado");
+        process::exit(1);
     }
 
     let mut param1 = args[1].clone();
